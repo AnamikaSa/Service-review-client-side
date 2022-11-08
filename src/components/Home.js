@@ -1,6 +1,7 @@
 import React from 'react';
 import about from '../images/about.jpg';
 import './Home.css';
+import Services from './Services';
 const Home = () => {
   return (
     <div>
@@ -32,10 +33,9 @@ const Home = () => {
        <br /><br/>Our services are like that.We try to give our best serviecs.Our expert <br></br> guides take you to the must-see destinations as well as the undiscovered <br/>places to enjoy wonderful tours in Rome in small groups or in <br/> private tours.</p>
       
         <img src={about} alt="" className='rounded shadow-2xl' style={{width:'500px'}}></img>
-    
-      
     </div>
 
+    <Services></Services>
 
     </div>
 
