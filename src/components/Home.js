@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import about from '../images/about.jpg';
 import './Home.css';
 import Services from './Services';
@@ -15,13 +16,11 @@ const Home = () => {
         <p>Let's enjoy every moment of life while traveling. <br />
           If you are looking for a proper agency ,here you are!!</p>
       </div>
-      <div class="btn-toolbar ml-96 pl-20 mt-5">
+      <div class="btn-toolbar ml-96 pl-32 mt-5">
         <div className="btn-group me-4">
-          <button class="btn btn-primary rounded-pill"> Learn More</button>
+         <Link to='/about'> <button class="btn btn-primary rounded-pill"> Learn More</button></Link>
         </div>
-        <div className="btn-group">
-          <button className="btn btn-outline-secondary rounded-pill text-white"> Book Now</button>
-        </div>
+        
       </div>
     </div>
 
