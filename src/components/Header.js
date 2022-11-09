@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
+import { AuthContext } from './contexts/AuthProvider';
 
 const Header = () => {
+    const{ user, logOut}=useContext(AuthContext);
+    const Log_out = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
+    const end = <>
+        {
+            user?.email ?
+                <>
+                <ul className="menu menu-horizontal p-0">
+                    <li><Link to='/reviews'>Reviews</Link></li>
+                    <li>
+                        <button onClick={Log_out} className='btn btn-info'>Log Out</button>
+                    </li></ul>
+                </>
+                :
+                <li className='btn btn-outline btn-warning'><Link to='/login'>Login</Link></li>
+        }
+    </>
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -23,10 +45,16 @@ const Header = () => {
                     <ul className="menu menu-horizontal p-0">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/formoreinfo'>Services</Link></li>
-                        <li><Link to='/reviews'>Reviews</Link></li>
+                        {/* <li><Link to='/reviews'>Reviews</Link></li> */}
                         <li><Link to='/'>Blog</Link></li>
                     </ul>
                 </div>
+                <div className="navbar-end">
+                    {/* <Link to='/login'>
+                <button className="btn btn-outline btn-warning">Login</button></Link> */}
+                {end}
+            </div>
+
             </div>
         </div>
     );

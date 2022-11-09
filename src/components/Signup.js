@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import i from '../images/login.svg';
 import  { AuthContext } from './contexts/AuthProvider';
 
 const Signup = () => {
+    const [error, setError] = useState('');
    const {createUser} =useContext(AuthContext);
 
     const handleSignUp = event =>{
@@ -13,11 +14,16 @@ const Signup = () => {
         const password = form.password.value;
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(err => console.error(err));
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                form.reset();
+            })
+            .catch(e => {
+                console.error(e);
+                setError(e.message);
+            });
     }
 
 
@@ -52,6 +58,9 @@ const Signup = () => {
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Sign Up" />
                         </div>
+                        <div className="text-danger">
+                {error}
+            </div>
                     </form>
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
                 </div>

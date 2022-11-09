@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from './contexts/AuthProvider';
 
 const Reviews = () => {
+    const {user} =useContext(AuthContext);
+
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
-        const email = 'unregistered';
+        const email = user?.email ||'unregistered';
         
         const phone = form.phone.value;
         const message = form.message.value;
@@ -35,7 +38,7 @@ const Reviews = () => {
                     <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" />
                     <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" />
                     <input name="phone" type="text" placeholder="Your Phone (Not Mandatory)" className="input input-ghost w-full  input-bordered" />
-                    <input name="email" type="text" placeholder="Your email"  className="input input-ghost w-full  input-bordered" readOnly />
+                    <input name="email" type="text" placeholder="Your email"  className="input input-ghost w-full  input-bordered"  defaultValue={user?.email} readOnly />
                 </div>
                 <textarea name="message" className="textarea textarea-bordered h-24 w-full" placeholder="Your Review Message" required></textarea>
 
