@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 
-const Services = () => {
+const ForMoreInfo = () => {
     const [service, setService] = useState([]);
     
     useEffect( () =>{
@@ -20,9 +20,10 @@ const Services = () => {
 
             <div className='md:grid grid-cols-3 mt-10'>
                 {
-                     service.slice(0,3).map(service => 
-                     <Cards key={service._id} service={service}/>
-                     )
+                     service.map(service => <Cards
+                        key={service._id}
+                        service={service}
+                    ></Cards>)
                 }
             </div>
             
@@ -30,4 +31,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default ForMoreInfo;
