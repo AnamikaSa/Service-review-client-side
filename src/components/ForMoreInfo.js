@@ -3,7 +3,7 @@ import Cards from './Cards';
 
 const ForMoreInfo = () => {
     const [service, setService] = useState([]);
-    
+
     useEffect( () =>{
         fetch('http://localhost:5000/services')
         .then(res =>res.json())
