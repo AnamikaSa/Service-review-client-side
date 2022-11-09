@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import i from '../images/login.svg'
+import i from '../images/login.svg';
+import { FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider } from 'firebase/auth';
+import { AuthContext } from './contexts/AuthProvider';
 
 const Login = () => {
+
+    const { providerLogin} = useContext(AuthContext);
+    // const navigate = useNavigate();
+    // const from = location.state?.from?.pathname || '/';
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const GoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                // const user = result.user;
+                // console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -10,7 +29,7 @@ const Login = () => {
         const password = form.password.value;
     }
 
-    
+
     return (
         <div className="hero w-full">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
@@ -40,6 +59,10 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='text-center'>New here? <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>
+                    <div >
+                        <p className='mt-5 text-center'>Or <br/>Login With Google</p>
+                            <button onClick={GoogleSignIn} className='mb-2 mt-2 ml-36' variant="outline-primary"> <FaGoogle></FaGoogle> </button>
+                    </div>
                 </div>
             </div>
         </div>
