@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, {  useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
 import Cards from './Cards';
-import { AuthContext } from './contexts/AuthProvider';
+// import { AuthContext } from './contexts/AuthProvider';
 
 const Services = () => {
-    const { user } = useContext(AuthContext);
+    // const { user } = useContext(AuthContext);
     const [service, setService] = useState([]);
     
 
     
     
     useEffect( () =>{
-        fetch('http://localhost:5000/services')
+        fetch('https://service-review-server-green.vercel.app/services')
         .then(res =>res.json())
         .then(data => setService(data))
     }, []);

@@ -7,7 +7,7 @@ const Reviews = () => {
     const [re, setRe] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`,{
+        fetch(`https://service-review-server-green.vercel.app/reviews?email=${user?.email}`,{
             headers: {
                 authorization: `Bearer ${localStorage.getItem('SR-token')}`
             }
@@ -37,7 +37,7 @@ const Reviews = () => {
             message
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://service-review-server-green.vercel.app/reviews', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(review)

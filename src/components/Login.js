@@ -40,7 +40,7 @@ const Login = () => {
                 
                 const currentuser={email:user.email}
 
-                fetch('http://localhost:5000/jwt',{
+                fetch('https://service-review-server-green.vercel.app/jwt',{
                     method:'POST',
                     headers:{
                         'content-type':'application/json'
