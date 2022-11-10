@@ -1,3 +1,15 @@
+# I worked on Travel web site.Here is the live link: https://service-review-anamika.web.app/
+
+## what i used here:
+### -> USed firebase for live link
+### ->Used vercel to deploy the API links
+### ->For database used MONGODB to store and collect data
+### ->In home pase showd only 3 destination but to know more you need to login first
+### ->After login you/one can see the reviews from other customers about the site services
+### ->After loging anyone can write reviews 
+### ->added some gallery photos to keep memory from travellers 
+### ->lastly added footer
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
