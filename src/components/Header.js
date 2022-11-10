@@ -46,7 +46,7 @@ const Header = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/formoreinfo'>Services</Link></li>
                         {/* <li><Link to='/reviews'>Reviews</Link></li> */}
-                        <li><Link to='/'>Blog</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

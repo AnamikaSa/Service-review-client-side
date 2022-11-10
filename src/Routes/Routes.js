@@ -1,3 +1,4 @@
+import Blog from "../components/Blog";
 import ForMoreInfo from "../components/ForMoreInfo";
 import Home from "../components/Home";
 import Main from "../components/Layout/Main";
@@ -23,6 +24,10 @@ const router= createBrowserRouter([
             {
                 path:"/reviews",
                 element:<Reviews></Reviews>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
             },
             {
                 path:'/login',
