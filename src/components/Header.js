@@ -16,7 +16,7 @@ const Header = () => {
             user?.email ?
                 <>
                 <ul className="menu menu-horizontal p-0">
-                    <li><Link to='/reviews'>Reviews</Link></li>
+                    <li><Link to='/reviews'>All Reviews</Link></li>
                     <li>
                         <button onClick={Log_out} className='btn btn-info'>Log Out</button>
                     </li></ul>

@@ -3,8 +3,10 @@ import ForMoreInfo from "../components/ForMoreInfo";
 import Home from "../components/Home";
 import Main from "../components/Layout/Main";
 import Login from "../components/Login";
+// import MyReviews from "../components/MyReviews";
 import Reviews from "../components/Reviews";
 import Signup from "../components/Signup";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -19,11 +21,11 @@ const router= createBrowserRouter([
             },
             {
                 path:'/formoreinfo',
-                element:<ForMoreInfo></ForMoreInfo>
+                element:<PrivateRoute><ForMoreInfo></ForMoreInfo></PrivateRoute>
             },
             {
                 path:"/reviews",
-                element:<Reviews></Reviews>
+                element:<PrivateRoute><Reviews></Reviews></PrivateRoute>
             },
             {
                 path:'/blog',

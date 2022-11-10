@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from './contexts/AuthProvider';
 
 const Reviews = () => {
@@ -58,6 +59,9 @@ const Reviews = () => {
                     )
                 }
             </div>
+{/* <div>
+<Link to="/myreviews"><button className='btn btn-accent rounded-pill ml-96 mt-8'>my reviews</button></Link>
+</div> */}
 
 
             <form onSubmit={handleReview}>
