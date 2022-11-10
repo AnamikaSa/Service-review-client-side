@@ -16,9 +16,9 @@ const Home = () => {
         <p>Let's enjoy every moment of life while traveling. <br />
           If you are looking for a proper agency ,here you are!!</p>
       </div>
-      <div class="btn-toolbar ml-96 pl-32 mt-5">
+      <div className="btn-toolbar ml-96 pl-32 mt-5">
         <div className="btn-group me-4">
-         <Link to='/about'> <button class="btn btn-primary rounded-pill"> Learn More</button></Link>
+         <Link to='/about'> <button className="btn btn-primary rounded-pill"> Learn More</button></Link>
         </div>
         
       </div>
