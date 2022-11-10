@@ -48,7 +48,7 @@ const Reviews = () => {
         <div>
             <div className='md:grid grid-cols-3 gap-y-5 mt-5'>
                 {
-                    re.map(r => <div className="card card-compact w-72 ml-10 bg-base-100 shadow-xl" key={r._id} r={r} handleReview={handleReview} >
+                    re.map(r => <div className="card card-compact w-72 ml-10 bg-base-100 shadow-xl" key={r._id} r={r} >
                         <div className="card-body">
                             <h2 className="card-title text-xl">{r.message}</h2>
                             <p>{r.customer}</p>
