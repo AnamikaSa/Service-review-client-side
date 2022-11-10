@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import about from '../images/about.jpg';
+import im1 from '../images/gallery-2.jpg';
+import im2 from '../images/gallery-4.jpg';
+import im3 from '../images/gallery-5.jpg';
+import im4 from '../images/img8.jpg';
+import im5 from '../images/packege-2.jpg';
 import './Home.css';
 import Services from './Services';
 const Home = () => {
@@ -36,6 +41,23 @@ const Home = () => {
 
     <Services></Services>
 
+    {/* Gallery */}
+
+<div>
+<h1 className='text-4xl text-center font-bold mt-8 '>Gallery</h1>
+    <h1 className="text-center">PHOTO'S FROM TRAVELLERS</h1>
+    <p className=" pt-3 text-center">
+      Enjoy your journey ,live with happiness & make memories. <br/> Explore the World.
+    </p>
+<div className='md:grid grid-cols-3 mt-10 ml-16 md:ml-3  lg:gap-y-5 gap-16'>
+  <img className='w-80 p-1 'src={im1} alt=""></img>
+  <img className='w-80 p-1' src={im2} alt=""></img>
+  <img className='w-80 p-1' src={im4} alt=""></img>
+  <img className='w-80 p-1' src={im3} alt=""></img>
+  <img className='w-80 p-1' src={im5} alt=""></img>
+</div>
+
+</div>
     </div>
 
   );
